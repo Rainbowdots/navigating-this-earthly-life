@@ -1,6 +1,6 @@
 # Navigating This Earthly Life 
 A tiny reflective book inspired by the wise words of my mentor, Sakada, on navigating life’s ups and downs.
-This repository hosts the PDF version of the book, shared freely for reading.
+This repository hosts the PDF version of the book.
 
 
 ## Read / Download
