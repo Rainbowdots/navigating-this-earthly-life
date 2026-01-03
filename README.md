@@ -9,7 +9,7 @@ https://github.com/Rainbowdots/navigating-this-earthly-life/raw/main/book/Naviga
   *(Opens or downloads the PDF directly, depending on your browser.)*
 
 **View PDF file on Github**
-https://github.com/Rainbowdots/navigating-this-earthly-life/blob/main/book/Navigating%20This%20Earthly%20Life.pdf  
+https://github.com/Rainbowdots/navigating-this-earthly-life/blob/main/book/Navigating%20This%20Earthly%20Life.pdf
   *(If GitHub preview is unavailable, please use the direct link above.)*
 
 
