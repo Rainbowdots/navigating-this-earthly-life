@@ -1,7 +1,5 @@
 # Navigating This Earthly Life
 
-**Read online:** https://rainbowdots.github.io/navigating-this-earthly-life/
-
 A reflective book inspired by the wise words of my mentor, Sakada, on navigating life's ups and downs.
 
 ## Read / Download
@@ -20,6 +18,5 @@ This book is dedicated to one of the wisest people I know, Sakada, an artist, ph
 
 ## Notes
 - This book is free to read online and download.
-- Feel free to share the link with others.
-- Please do not repost the PDF on other platforms without permission.
+- Feel free to share.
 - © 2025 Erika Huang · Registered with the U.S. Copyright Office · No. TXu 2-547-977
