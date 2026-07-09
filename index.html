@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navigating This Earthly Life</title>
+  <meta name="description" content="A collection of wise words from Sakada — on self, life, and creativity. Compiled and reflected by Erika Huang." />
+  <meta property="og:title" content="Navigating This Earthly Life" />
+  <meta property="og:description" content="A collection of wise words from Sakada — on self, life, and creativity." />
+  <meta property="og:type" content="book" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400;1,300&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:     #f4a7c3;
+      --lavender: #c9b8e8;
+      --teal:     #7ec8c8;
+      --yellow:   #d4e88a;
+      --coral:    #f07a5a;
+      --ink:      #2a2235;
+      --ink-soft: #5a5070;
+      --ink-muted:#9a90a8;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: #fdf6f9;
+      color: var(--ink);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Gradient mesh — light version of cover palette ── */
+    .mesh {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 65% 55% at 5%  15%,  rgba(244,167,195,0.38) 0%, transparent 70%),
+        radial-gradient(ellipse 55% 60% at 95% 10%,  rgba(126,200,200,0.28) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 85% 85%,  rgba(201,184,232,0.35) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 45% at 15% 90%,  rgba(212,232,138,0.2)  0%, transparent 60%),
+        radial-gradient(ellipse 35% 35% at 50% 50%,  rgba(240,122,90,0.1)   0%, transparent 70%);
+      background-color: #fdf6f9;
+    }
+
+    /* grain — same as cover texture */
+    .mesh::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    /* ── Layout ── */
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Nav ── */
+    .nav-wrap {
+      position: relative;
+      z-index: 10;
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+    }
+
+    .nav-copy {
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--ink-muted);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 3rem 0 2.5rem;
+      text-align: center;
+    }
+
+    /* Subtitle: italic serif — matches cover italic */
+    .subtitle {
+      font-family: 'Lora', serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--ink-soft);
+      margin-bottom: 2.5rem;
+      display: block;
+      line-height: 1.7;
+    }
+
+    /* Title: all-caps geometric sans — matches cover title */
+    .title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.8rem, 10vw, 5.5rem);
+      font-weight: 200;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      line-height: 1.08;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+
+    .title .line2 {
+      display: block;
+      font-size: clamp(1.5rem, 5.5vw, 2.9rem);
+      letter-spacing: 0.2em;
+      color: var(--ink-soft);
+      margin-top: 0.3rem;
+    }
+
+    .byline {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      margin-top: 1.5rem;
+      margin-bottom: 2.8rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── CTA ── */
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-read {
+      display: inline-block;
+      padding: 0.85rem 2.4rem;
+      background: var(--ink);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-read:hover { background: var(--ink-soft); transform: translateY(-2px); }
+
+    .btn-dl {
+      display: inline-block;
+      padding: 0.85rem 1.8rem;
+      background: transparent;
+      color: var(--ink-soft);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2rem;
+      border: 1px solid rgba(90,80,112,0.3);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-dl:hover { border-color: var(--ink-soft); color: var(--ink); }
+
+    /* ── Cover image ── */
+    .cover-wrap {
+      padding: 3rem 0 3.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cover-img {
+      width: min(260px, 65vw);
+      border-radius: 6px;
+      box-shadow:
+        0 2px 0 1px rgba(201,184,232,0.3),
+        0 20px 60px rgba(180,140,200,0.25),
+        0 4px 12px rgba(244,167,195,0.2);
+      display: block;
+    }
+
+    /* ── Divider ── */
+    .rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,184,232,0.5) 30%, rgba(201,184,232,0.5) 70%, transparent);
+      margin: 0.5rem 0;
+    }
+
+    /* ── About ── */
+    .about {
+      padding: 3rem 0 2.5rem;
+    }
+
+    .section-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-text {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      line-height: 1.95;
+      color: var(--ink-soft);
+      max-width: 480px;
+    }
+
+    /* ── Meta ── */
+    .meta {
+      padding: 2rem 0 2.5rem;
+      border-top: 1px solid rgba(201,184,232,0.3);
+      display: flex;
+      gap: 2.5rem 4rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-label {
+      font-size: 0.63rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .meta-value {
+      font-family: 'Lora', serif;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(201,184,232,0.3);
+      padding: 2rem 0 3rem;
+    }
+
+    .footer-inner {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .footer-text {
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--ink-muted);
+    }
+
+    .footer-link {
+      font-size: 0.7rem;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--ink-soft); }
+
+    @media (max-width: 480px) {
+      .hero { padding: 2rem 0 1.5rem; }
+      .meta { gap: 1.5rem 2rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mesh"></div>
+
+  <div class="nav-wrap">
+    <span class="nav-copy">© 2025 Erika Huang</span>
+  </div>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="subtitle">A collection of wise words from Sakada —<br>On self, life, and creativity.</span>
+      <h1 class="title">
+        Navigating
+        <span class="line2">This Earthly Life</span>
+      </h1>
+      <p class="byline">Compiled and reflected by Erika Huang</p>
+      <div class="cta-group">
+        <a href="read.html" class="btn-read">Read online</a>
+        <a href="https://github.com/Rainbowdots/navigating-this-earthly-life/raw/main/book/Navigating%20This%20Earthly%20Life.pdf" class="btn-dl" download>Download PDF ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="cover-wrap">
+    <img src="pages/p-01.jpg" alt="Navigating This Earthly Life — book cover" class="cover-img" />
+  </div>
+
+  <div class="wrap">
+    <div class="rule"></div>
+
+    <section class="about">
+      <span class="section-label">About</span>
+      <p class="about-text">
+        This book is dedicated to S. Sakada — a writer, artist, photographer, and mentor.
+        Our paths crossed at the most unlikely time, in the most unlikely place.
+        I hope her wise words inspire and empower you as much as they have me.
+      </p>
+    </section>
+
+    <section class="meta">
+      <div>
+        <span class="meta-label">Access</span>
+        <span class="meta-value">Free to read online</span>
+      </div>
+      <div>
+        <span class="meta-label">Copyright</span>
+        <span class="meta-value">U.S. Copyright Office · No. TXu 2-547-977</span>
+      </div>
+      <div>
+        <span class="meta-label">Sections</span>
+        <span class="meta-value">Know Thyself · Making Sense of Life<br>Writing, Creativity & Doing</span>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-text">© 2025 Erika Huang. All rights reserved. · Reg. No. TXu 2-547-977</span>
+      <a href="https://github.com/Rainbowdots/navigating-this-earthly-life" class="footer-link" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+  </footer>
+
+</body>
+</html>
